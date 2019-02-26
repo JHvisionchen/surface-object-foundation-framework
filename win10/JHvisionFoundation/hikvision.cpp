@@ -3,7 +3,7 @@
 long int nPort=0;
 LONG lUserID;
 LONG lRealPlayHandle;
-
+//构造函数
 Hikvision::Hikvision()
 {
 

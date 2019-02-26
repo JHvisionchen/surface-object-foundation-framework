@@ -19,7 +19,10 @@ SOURCES += main.cpp\
     globalvariable.cpp \
     camera.cpp \
     inputdata.cpp \
-    processing.cpp
+    processing.cpp \
+    usbcam.cpp \
+    video.cpp \
+    picture.cpp
 
 HEADERS  += mainwindow.h \
     ImageBuffer.h \
@@ -27,7 +30,10 @@ HEADERS  += mainwindow.h \
     globalvariable.h \
     camera.h \
     inputdata.h \
-    processing.h
+    processing.h \
+    usbcam.h \
+    video.h \
+    picture.h
 
 FORMS    += mainwindow.ui
 

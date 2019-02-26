@@ -11,6 +11,12 @@ bool forDown=false;
 // 摄像机焦距控制
 bool forZoomIn=false;
 bool forZoomOut=false;
+//摄像头的选择，0表示hik，1表示usb
+int camnum=0;
+//关闭总程序指示
+bool stopUI=false;
+//输入数据类型选择，0表示摄像头，1表示视频，2表示图片
+int inputtype=0;
 
 QImage MatToQImage(const Mat& mat)
 {
@@ -41,5 +47,12 @@ QImage MatToQImage(const Mat& mat)
     {
         qDebug() << "ERROR: Mat could not be converted to QImage.";
         return QImage();
+    }
+}
+// for qt sleep
+void qtsleep(unsigned int msec){
+    QTime reachTime=QTime::currentTime().addMSecs(msec);
+    while(QTime::currentTime()<reachTime){
+        QCoreApplication::processEvents(QEventLoop::AllEvents,100);
     }
 }

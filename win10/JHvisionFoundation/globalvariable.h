@@ -28,7 +28,14 @@ extern bool forDown;
 // 摄像机焦距控制
 extern bool forZoomIn;
 extern bool forZoomOut;
+//摄像头的选择，0表示hik，1表示usb
+extern int camnum;
+//输入数据类型选择，0表示摄像头，1表示视频，2表示图片
+extern int inputtype;
+//关闭总程序指示
+extern bool stopUI;
 
 QImage MatToQImage(const Mat&);
+void qtsleep(unsigned int msec);
 
 #endif // GLOBALVARIABLE_H

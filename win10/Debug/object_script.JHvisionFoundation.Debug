@@ -7,6 +7,8 @@ INPUT(
 ./debug\camera.o
 ./debug\inputdata.o
 ./debug\processing.o
+./debug\usbcam.o
+./debug\video.o
 ./debug\moc_mainwindow.o
 ./debug\moc_inputdata.o
 ./debug\moc_processing.o

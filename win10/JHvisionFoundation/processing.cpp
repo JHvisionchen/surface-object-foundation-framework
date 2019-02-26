@@ -14,7 +14,17 @@ void processing::run(){
         //currentFrame=imread("Penguins.jpg");
         updateMembersMutex.lock();
         //以下的函数或者程序可以用来对每一帧图像进行处理
-        frame=MatToQImage(currentFrame);
+        Mat tmpMat;
+        cvtColor(currentFrame,tmpMat,CV_BGR2GRAY);
+        blur(tmpMat,tmpMat,Size(7,7));
+        Canny(tmpMat,tmpMat,0,30,3);
+
+
+        frame=MatToQImage(tmpMat);
+
+
+
+
         updateMembersMutex.unlock();
         //发出信号，通知GUI线程有新处理好的一帧
         emit newFrame(frame);

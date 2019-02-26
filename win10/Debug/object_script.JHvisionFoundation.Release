@@ -7,6 +7,8 @@ INPUT(
 ./release\camera.o
 ./release\inputdata.o
 ./release\processing.o
+./release\usbcam.o
+./release\video.o
 ./release\moc_mainwindow.o
 ./release\moc_inputdata.o
 ./release\moc_processing.o
