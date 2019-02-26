@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\ImageBuffer.o
+./release\hikvision.o
+./release\globalvariable.o
+./release\camera.o
+./release\inputdata.o
+./release\processing.o
+./release\moc_mainwindow.o
+./release\moc_inputdata.o
+./release\moc_processing.o
+);

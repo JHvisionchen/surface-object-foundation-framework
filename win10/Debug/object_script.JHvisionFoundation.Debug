@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\ImageBuffer.o
+./debug\hikvision.o
+./debug\globalvariable.o
+./debug\camera.o
+./debug\inputdata.o
+./debug\processing.o
+./debug\moc_mainwindow.o
+./debug\moc_inputdata.o
+./debug\moc_processing.o
+);
