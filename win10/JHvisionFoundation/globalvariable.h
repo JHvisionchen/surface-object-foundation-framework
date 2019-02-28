@@ -11,6 +11,7 @@
 // OpenCV header files
 #include <opencv2/opencv.hpp>
 #include <opencv/highgui.h>
+#include <vector>
 // imagebuffer
 #include "ImageBuffer.h"
 
@@ -34,8 +35,11 @@ extern int camnum;
 extern int inputtype;
 //关闭总程序指示
 extern bool stopUI;
-
+//图像数据转换
 QImage MatToQImage(const Mat&);
+//qt下的延时函数
 void qtsleep(unsigned int msec);
+//获取目录下所有图片的文件名
+vector<QString> getImgNames(QString path);
 
 #endif // GLOBALVARIABLE_H

@@ -13,7 +13,7 @@ InputData::InputData()
     }
     //输入图片数据
     else{
-
+        pictureInput();
     }
 }
 //摄像头输入
@@ -38,6 +38,9 @@ void InputData::videoInput(){
 }
 //图片输入
 void InputData::pictureInput(){
-
+    picThread=new Picture("D:/tracking/OTB100/BlurCar4/img");
+    picThread->start((QThread::Priority)7);
+    processThread=new processing();
+    processThread->start((QThread::Priority)7);
 }
 

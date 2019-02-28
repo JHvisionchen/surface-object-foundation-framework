@@ -6,6 +6,7 @@
 #include "camera.h"
 #include "processing.h"
 #include "video.h"
+#include "picture.h"
 
 class InputData : public QObject
 {
@@ -21,13 +22,17 @@ public:
     void pictureInput();
     //处理线程对象
     processing *processThread;
+    //摄像头对象
+    Camera *camera;
+    //视频对象
+    Video *videoThread;
+    //图片对象
+    Picture *picThread;
 
 private:
     QImage frame;
-    Camera *camera;
     bool cameraStarted;
-    //视频对象
-    Video *videoThread;
+
 };
 
 #endif // INPUTDATA_H

@@ -12,12 +12,12 @@ bool forDown=false;
 bool forZoomIn=false;
 bool forZoomOut=false;
 //摄像头的选择，0表示hik，1表示usb
-int camnum=0;
+int camnum=1;
 //关闭总程序指示
 bool stopUI=false;
 //输入数据类型选择，0表示摄像头，1表示视频，2表示图片
 int inputtype=0;
-
+//图像数据转换
 QImage MatToQImage(const Mat& mat)
 {
     // 8-bits unsigned, NO. OF CHANNELS=1
@@ -49,10 +49,32 @@ QImage MatToQImage(const Mat& mat)
         return QImage();
     }
 }
-// for qt sleep
+//qt下的延时函数
 void qtsleep(unsigned int msec){
     QTime reachTime=QTime::currentTime().addMSecs(msec);
     while(QTime::currentTime()<reachTime){
         QCoreApplication::processEvents(QEventLoop::AllEvents,100);
     }
+}
+//获取目录下所有图片的文件名
+vector<QString> getImgNames(QString path){
+    vector<QString> imgNames;
+    QDir dir(path);
+    if(!dir.exists()){
+        qDebug()<<"the dir is not exist!";
+    }
+    dir.setFilter(QDir::Files);
+    dir.setSorting(QDir::Name);
+    QFileInfoList list=dir.entryInfoList();
+    for(int i=0;i<list.size();i++){
+        QFileInfo fileinfo=list.at(i);
+        //qDebug()<<fileinfo.fileName();
+        QString tmp;
+        tmp.append(path);
+        tmp.append("/");
+        tmp.append(fileinfo.fileName());
+        qDebug()<<tmp;
+        imgNames.push_back(tmp);
+    }
+    return imgNames;
 }

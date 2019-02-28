@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui serialport
+CONFIG += c++11
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -22,7 +23,10 @@ SOURCES += main.cpp\
     processing.cpp \
     usbcam.cpp \
     video.cpp \
-    picture.cpp
+    picture.cpp \
+    tracking/cn/color_tracker.cpp \
+    tracking/cn/color_tracker_parameters.cpp \
+    serialport/serialport.cpp
 
 HEADERS  += mainwindow.h \
     ImageBuffer.h \
@@ -33,7 +37,10 @@ HEADERS  += mainwindow.h \
     processing.h \
     usbcam.h \
     video.h \
-    picture.h
+    picture.h \
+    tracking/cn/color_tracker.hpp \
+    tracking/cn/color_tracker_parameters.hpp \
+    serialport/serialport.h
 
 FORMS    += mainwindow.ui
 
@@ -46,3 +53,6 @@ INCLUDEPATH += G:/opencv3.1.0/mingw32/install/include \
 # hik win32
 LIBS += -L G:/hikSDK/win32/bin/*.lib
 INCLUDEPATH += G:/hikSDK/win32/include
+
+RESOURCES += \
+    imgs.qrc

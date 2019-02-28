@@ -13,12 +13,13 @@ public:
     bool connectToCamera(int capThreadPrio);
     //连接cam摄像机并开启图像捕捉线程
     bool connectTousbcam(int camThreadPrio);
-
-private:
     //hikvision摄像头对象
     Hikvision *hikThread;
     //usb摄像头对象
     UsbCam *usbThread;
+
+private:
+
 };
 
 #endif // CAMERA_H
